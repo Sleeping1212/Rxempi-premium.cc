@@ -1,0 +1,275 @@
+-- Made by @zeins5 on discord
+local introCompleted = false
+
+if game:IsLoaded() then
+    local ShowIntro = true
+
+    local TweenService = game:GetService("TweenService")
+    local Blur = Instance.new("BlurEffect", game.Lighting)
+    local ScreenGui = Instance.new("ScreenGui")
+    local TextLabel = Instance.new("TextLabel")
+    local ImageLabel = Instance.new("ImageLabel")
+
+    Blur.Size = 0
+
+    if ShowIntro then
+        ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+        -- Configure TextLabel
+        TextLabel.Parent = ScreenGui
+        TextLabel.BackgroundTransparency = 1.000
+        TextLabel.BorderSizePixel = 0
+        TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0) -- Centered on the screen
+        TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+        TextLabel.Size = UDim2.new(0, 800, 0, 200)
+        TextLabel.Text = "Rxempi gui is loading"
+        TextLabel.TextColor3 = Color3.fromRGB(228, 173, 200)
+        TextLabel.TextTransparency = 1.000
+        TextLabel.TextScaled = true
+        TextLabel.Font = Enum.Font.Arcade
+
+        ImageLabel.Parent = ScreenGui
+        ImageLabel.BackgroundTransparency = 1.000
+        ImageLabel.Size = UDim2.new(0, 400, 0, 400) -- Original size
+        ImageLabel.Position = UDim2.new(0.5, 0, 0.6, 0) -- Start position
+        ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+        ImageLabel.Image = "rbxassetid://17676210956" -- New asset ID
+        ImageLabel.ImageTransparency = 1.000 
+
+        local tweenStartBlur = TweenService:Create(Blur, TweenInfo.new(0.70), {Size = 24})
+        local tweenStartTextTransparency = TweenService:Create(TextLabel, TweenInfo.new(0.70), {TextTransparency = 0})
+        local tweenEndTextTransparency = TweenService:Create(TextLabel, TweenInfo.new(0.80), {TextTransparency = 1})
+        local tweenStartImageTransparency = TweenService:Create(ImageLabel, TweenInfo.new(0.70), {ImageTransparency = 0})
+
+        local tweenZoomIn = TweenService:Create(ImageLabel, TweenInfo.new(6, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, 800, 0, 800), -- End size (larger)
+            Position = UDim2.new(0.5, 0, 0.5, 0), -- End position (centered)
+            ImageTransparency = 1 -- Fade out
+        })
+
+        tweenStartBlur:Play()
+        tweenStartTextTransparency:Play()
+
+        tweenStartTextTransparency.Completed:Connect(function()
+            task.wait(1) 
+            tweenEndTextTransparency:Play()
+        end)
+
+        tweenEndTextTransparency.Completed:Connect(function()
+            tweenStartImageTransparency:Play()
+        end)
+
+        tweenStartImageTransparency.Completed:Connect(function()
+            -- Play zoom-in and fade-out animation
+            tweenZoomIn:Play()
+            tweenZoomIn.Completed:Connect(function()
+                Blur:Destroy()
+                ScreenGui:Destroy()
+                introCompleted = true 
+            end)
+        end)
+    else
+        introCompleted = true 
+    end
+
+    while not introCompleted do
+        task.wait(0.1)
+    end
+end
+
+local function fadeInGui(gui)
+    gui.Enabled = true
+    gui.ResetOnSpawn = false
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    gui:SetAttribute("Transparency", 1)
+
+    local tweenService = game:GetService("TweenService")
+    local tween = tweenService:Create(gui, TweenInfo.new(0.5), { ["Transparency"] = 0 })
+
+    tween:Play()
+end
+
+wait(0.8) -- transfer to second gui wait time
+
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/6HMp1NDn"))()
+local Window = Library:CreateWindow("Rxempi PrEmIuM.cc", Vector2.new(430, 310), Enum.KeyCode.P)
+    local AimingTab = Window:CreateTab("Locks")
+    local testSection = AimingTab:CreateSector("  Camlocks ", "left")
+    local bladLockPrediction = 0
+   testSection:AddButton("Rxempi cam.", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/3S2tTdA3"))();
+     end) 
+   testSection:AddButton("Rxempi cam 2.", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastefy.app/3MlevWIy/raw"))();
+     end) 
+testSection:AddButton("Rxempi cam 3.", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/Ps9CrpXT"))();
+     end) 
+testSection:AddButton("Rxempi cam 4.", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/Twi3zC1p", true))()
+     end) 
+testSection:AddButton("Rxempi cam 5.", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/KbiqKPZF"))();
+     end)
+
+local testSection = AimingTab:CreateSector(" Random", "right")
+    local bladLockPrediction = 0
+    testSection:AddButton("bullet tp", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/ULZrjCTV"))()
+     end)
+
+local testSection = AimingTab:CreateSector("   silent aim ", "right")
+    local bladLockPrediction = 0
+    testSection:AddButton("Rxempi silent", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/kxhFS6Y2"))();
+     end) 
+  testSection:AddButton("Rx silent streamable", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/LxLbHe36"))();
+        end) 
+testSection:AddButton("Rx silent streamable 2", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/LxLbHe36"))();
+        end) testSection:AddButton("Rxempi silent", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/WcRNgYCm"))();
+        end) testSection:AddButton("Rxempi silent 2", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/WcRNgYCm"))();
+        end)
+     local AimingTab = Window:CreateTab("misc")
+    local testSection = AimingTab:CreateSector(" Useful stuff (2)", "right")
+
+testSection:AddButton("Macro shift", function(IhateGayPeople)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Unknownproootest/Permanent-Shift-Lock-Alt/alt/PermShiftlockAlt'))()
+     end) 
+testSection:AddButton("Trash talk (q tool)", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/Ux74dpcY", true))()
+    end)
+testSection:AddButton("q tool", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/qtoolv3/main/qtoolv3", true))()
+     end)
+
+ testSection:AddButton(" headless and korblox ", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/zCJc1WZC"))()
+     end) 
+testSection:AddButton("Rxempi fling script", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastefy.app/gAAcKj8J/raw"))();
+     end)
+testSection:AddButton("Resolver", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FeliciaXxxTop/FuckRoblox/main/ResolverV1.lua"))();
+     end)
+testSection:AddButton("Anti Vf Mods", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Jeunaisalive/antimodvf/main/beta-v0"))()
+      end)
+testSection:AddButton("stretch res", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastefy.app/wZ2S5oxr/raw"))()
+     end) 
+testSection:AddButton("shaders", function(IhateGayPeople)
+loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+     end)
+testSection:AddButton(" sets generator do /console ", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/meowguy1/Meowguylastsetgen/main/Byebyeguys"))()
+     end) 
+testSection:AddButton("infinite jumps", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/9w4qUCYe", true))()
+      end) 
+testSection:AddButton("farm stomps (vf only)", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/plah911/whitelister/main/farmstompslikeamonkey"))();
+      end) 
+   testSection:AddButton("auto reload", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/Protected_3489994584822399.txt"))();
+      end)
+ testSection:AddButton("Fe Emotes", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/eCpipCTH"))()
+     end)
+
+local testSection = AimingTab:CreateSector("  Useful stuff ", "Left")
+
+testSection:AddButton("rightclick", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/RightClick"))()
+     end) 
+testSection:AddButton("anti-fling", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/L5SphSrU"))()
+     end) testSection:AddButton("Keyboard", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+     end) 
+testSection:AddButton("fly v1", function(IhateGayPeople)
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-Gui-18103"))()
+     end)      testSection:AddButton("animation", function(IhateGayPeople)
+while true do
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
+game.Players.LocalPlayer.Character.Humanoid.Jump = false
+wait(1)
+end
+     end) 
+testSection:AddButton("Esp", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastebin.com/raw/g216nQ7d"))()
+     end)
+ testSection:AddButton("adonis anti", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua",true))()
+     end)
+  testSection:AddButton("macro", function(IhateGayPeople)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/macromobbyballigusapo"))()
+     end) 
+  testSection:AddButton("tpwalk", function(IhateGayPeople)
+loadstring(Game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox/Scripts/Tpwalk%20V4%20%5B%20REVAMP%20%5D.lua", true))()
+     end)
+   testSection:AddButton("anti lock", function(IhateGayPeople)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
+     end)
+testSection:AddButton("fps unlocker", function(IhateGayPeople)
+loadstring(game:HttpGet("https://pastefy.app/Rn0Zu0MK/raw"))();
+     end)
+testSection:AddButton("fps unlock", function(IhateGayPeople)
+for i,v in next, (workspace:GetDescendants()) do
+ if v:IsA("Part") then v.Material = Enum.Material.SmoothPlastic
+ end
+ end
+     end)
+
+     testSection:AddButton("fps boost", function(IhateGayPeople)
+local a = tick()
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+wait(.1)
+sethiddenproperty(game.Lighting, "Technology", 2)
+sethiddenproperty(workspace:FindFirstChildOfClass("Terrain"), "Decoration", false)
+settings().Rendering.QualityLevel = 1
+setsimulationradius(0,0)
+game.Lighting.GlobalShadows = false
+game.Lighting.FogEnd = 9e9
+workspace:FindFirstChildOfClass("Terrain").Elasticity = 0
+for b, c in pairs(game:GetDescendants()) do
+    task.spawn(
+        function()
+            wait()
+            if c:IsA("DataModelMesh") then
+                sethiddenproperty(c, "LODX", Enum.LevelOfDetailSetting.Low)
+                sethiddenproperty(c, "LODY", Enum.LevelOfDetailSetting.Low)
+                c.CollisionFidelity = "Hull"
+            elseif c:IsA("UnionOperation") then
+                c.CollisionFidelity = "Hull"
+            elseif c:IsA("Model") then
+                sethiddenproperty(c, "LevelOfDetail", 1)
+            elseif c:IsA("BasePart") then
+                c.Reflectance = 0
+                c.CastShadow = false
+            end
+        end
+    )
+end
+for d, e in pairs(game.Lighting:GetChildren()) do
+    if e:IsA("PostEffect") then
+        e.Enabled = false
+    end
+end
+warn("Low graphics loaded! (" .. math.floor(tick() - a) .. "s)")
+     end) 
+local AimingTab = Window:CreateTab("Credits")
+          
+  local testSection = AimingTab:CreateSector("Rxempi (best coder)", "left")
